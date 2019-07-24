@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2019 at 09:26 AM
+-- Generation Time: Jul 24, 2019 at 05:32 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -44,31 +44,26 @@ CREATE TABLE `book` (
 
 INSERT INTO `book` (`id`, `name`, `price`, `author`, `Date`, `class`, `quantity`) VALUES
 (15, 'c', 123.50, 'chandan', '2017-12-15', 'tyit', 5),
-(16, 'python', 123.50, 'deepakttt', '2017-12-15', 'tyit', 78),
 (17, 'java', 125.00, 'deepak tiwari', '2017-12-15', 'syit', 2),
 (18, 'python', 343.00, 'syit', '2017-12-12', 'syit', 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roombook`
+-- Table structure for table `login`
 --
 
-CREATE TABLE `roombook` (
-  `rid` int(10) NOT NULL,
-  `rtype` varchar(10) NOT NULL,
-  `rcharges` varchar(100) NOT NULL,
-  `rcust` varchar(100) NOT NULL,
-  `rmob` varchar(10) NOT NULL,
-  `rstatus` varchar(10) NOT NULL
+CREATE TABLE `login` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `roombook`
+-- Dumping data for table `login`
 --
 
-INSERT INTO `roombook` (`rid`, `rtype`, `rcharges`, `rcust`, `rmob`, `rstatus`) VALUES
-(1, 'Delux', '5000', 'deepak', '12345678', 'good');
+INSERT INTO `login` (`username`, `password`) VALUES
+('deepak', 'tiwari');
 
 -- --------------------------------------------------------
 
@@ -105,12 +100,6 @@ ALTER TABLE `book`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `roombook`
---
-ALTER TABLE `roombook`
-  ADD PRIMARY KEY (`rid`);
-
---
 -- Indexes for table `stud`
 --
 ALTER TABLE `stud`
@@ -125,12 +114,6 @@ ALTER TABLE `stud`
 --
 ALTER TABLE `book`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- AUTO_INCREMENT for table `roombook`
---
-ALTER TABLE `roombook`
-  MODIFY `rid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

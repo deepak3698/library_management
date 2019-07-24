@@ -1,3 +1,9 @@
+
+<?php
+session_start();
+if(!isset($_SESSION['k']))
+	header('location:http://localhost/mypr/login1.php');
+?>
 <?php 
 $id=$_POST['title'];
 $name=$_POST['price'];
@@ -12,11 +18,29 @@ $st=mysqli_query($con,$q);
 mysqli_close($con);
 ?>
 <!DOCTYPE html>
-<html>
+<head>
+
+<style>
+
+div.a{
+
+  position: absolute;
+  right: 0;
+  width: 150px;
+  height: 50px;
+  border: 3px solid blue;
+
+}
+</style>
 <title>
 insertion</title>
 </head>
 <body>
+<div class="a">
+<?php
+echo $_SESSION['k'];
+?>
+</div>
 <h1 align="center" style="color:blue">BOOK RECORD SYSTEM OF KALANI COLLEGE</h1>
 <p><?php 
 if($st==1)

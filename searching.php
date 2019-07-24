@@ -1,4 +1,9 @@
+
 <?php 
+session_start();
+if(!isset($_SESSION['k']))
+	header('location:http://localhost/mypr/login1.php');
+
 $con=mysqli_connect('localhost','root');
 mysqli_select_db($con,'dt');
 $p=$_POST['nn'];
@@ -14,17 +19,31 @@ mysqli_close($con);
 tr{color:#FF338A;}
 th{color:blue;}
 td{color:black;}
+
+
+div.a{
+
+  position: absolute;
+  right: 0;
+  width: 150px;
+  height: 50px;
+  border: 3px solid blue;
+
+
+
 </style>
 <title>
 searched form</title>
 </head>
-<?php
-session_start();
-if(!isset($_SESSION['k']))
-	header('location:http://localhost/mypr/login1.php');
-?>
+
 <body>
+<div class="a">
+<?php
+echo $_SESSION['k'];
+?>
+</div>
 <h1>BOOK RECORD SYSTEM OF KALANI COLLEGE</h1>
+<hr>
 <table border="1">
 <tr>
 <th>Id</th>
@@ -56,13 +75,18 @@ for($i=1;$i<=$num;$i++)
 }
 else
 {
-	echo "reult not found";
-}	
+
+
+	echo "Reult Not Found";
+
+}
+
 ?>
 
+<hr>
 </table>
 <h1>GO TO HOME PAGE<a href="home.php">click here</a></h1></br>
-<h1>GO TO SEARCHING PAGE <a href="searchingg.php">click here</a></h1></br>
+<h1>GO TO SEARCHING PAGE <a href="search.php">click here</a></h1></br>
 <hr>
 <i style="position:absolute; bottom:5px;background-color:pink">CREATED BY DEEPAK TIWARI</i>
 </body>
